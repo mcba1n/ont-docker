@@ -1,5 +1,5 @@
 #  Scrappie using Docker
-A quick guide to setup a work environment for Scrappie and Scrappie Python. Since this software is native to Linux-based systems, we will use [Docker](https://www.docker.com/get-started) to create a lightweight Virtual Machine (VM) that runs on MacOS and Windows.
+A quick guide to setup a work environment for Scrappie and Scrappie Python. Since this software is native to Linux-based systems, we will use [Docker](https://www.docker.com/get-started) to create a lightweight Virtual Machine (VM) that runs on MacOS and Windows. Though this guide is focused on MacOS, analogous Docker commands may be used for Windows.
 
 ## Scrappie
 Download the Scrappie source repo.
