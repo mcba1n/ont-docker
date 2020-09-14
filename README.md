@@ -75,6 +75,7 @@ From now on, just open Docker and run command `scrappie` in your native OS.
 # Flappie using Docker
 Follow the previous instructions using Dockerfile from `flappie/` instead. The Docker container allows you to run Flappie core by command `flappie` as in the official demos.
 
+## Dockerfile
 ```
 FROM ubuntu:16.04
 RUN apt update && apt install -y git libcunit1 libopenblas-base cmake libcunit1-dev libhdf5-dev libopenblas-dev parallel ca-certificates apt-utils gcc make curl
