@@ -41,7 +41,7 @@ docker run -it scrappie
 If you want to run Scrappie core, go to `/scrappie/build/` and run it with `./scrappie` (rather than `scrappie` as used in the official Scrappie demos). To run a Python script using Scrappie Python, see the next section.
 
 ## Mount
-You will want to mount a folder from your native OS to the Docker container so that you can bidirectionally transfer data by a shared folder. Specify the directory of a folder to share, relative to your user directory `${PWD}`, and a directory in your Docker container to be coupled with.
+You will want to mount a folder from your native OS to the Docker container so that you can bidirectionally transfer data by a shared folder. Specify the directory of a folder to share, relative to your current working directory `${PWD}`, and a directory in your Docker container to be coupled with.
 
 ```bash
 docker run -it -v ${PWD}/path/to/shared/folder:/data scrappie
