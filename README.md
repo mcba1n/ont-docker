@@ -2,14 +2,14 @@
 A quick guide to setup a work environment for Scrappie and Scrappie Python. Since this software is native to Linux-based systems, we will use [Docker](https://www.docker.com/get-started) to create a lightweight Virtual Machine (VM) that runs on MacOS and Windows. Though this guide is focused on MacOS, analogous Docker commands may be used for Windows.
 
 ## Dockerfile
-The original Dockerfile was taken from `scrappie/docker/ubuntu/ubuntu_18_04/`, and then modified to include python3, pip3, and Scrappie Python.
+The original Dockerfile was inspired from `https://github.com/nanoporetech/scrappie/blob/master/docker/ubuntu/ubuntu_18_04/Dockerfile`, and then modified to include python3, pip3, and Scrappie Python.
 Hence, the Docker environment will be ready to run the Pythonised version of Scrappie at startup.
 
 ```
 FROM ubuntu:18.04
-MAINTAINER Tim Massingham <tim.massingham@nanoporetech.com>
-RUN apt-get update && apt-get install -y --no-install-recommends  \
-    ca-certificates gcc git libopenblas-dev libhdf5-dev cmake make libcunit1-dev python3
+RUN apt update && apt install -y git libcunit1 libopenblas-base cmake libcunit1-dev libhdf5-dev libopenblas-dev parallel ca-certificates apt-utils gcc make curl python3
+RUN apt-get install python3-pip -y
+RUN pip3 install scrappie && pip3 install fast5_research && pip3 install h5py && pip3 install numpy && pip3 install dtw-python
 RUN git clone --depth 1 https://github.com/nanoporetech/scrappie.git
 
 RUN cd scrappie && \
@@ -18,9 +18,6 @@ RUN cd scrappie && \
     cmake .. && \
     make && \
     make test
-
-RUN apt-get install python3-pip -y
-RUN pip3 install scrappie
 ```
 
 
