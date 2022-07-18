@@ -81,8 +81,10 @@ RUN curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.d
 SHELL ["/bin/bash", "-ce"]
 ```
 
+---
+
 # Bonito using Docker
-A Dockerfile to install the Bonito basecaller in `https://github.com/nanoporetech/bonito` from source.
+A Dockerfile to install the Bonito basecaller in `https://github.com/nanoporetech/bonito` from source. Beware that the Docker image will use around 12GB.
 
 ## Dockerfile
 ```
@@ -110,4 +112,4 @@ RUN git clone https://github.com/nanoporetech/bonito.git && \
     pip install -r requirements.txt && \
     python setup.py develop
 ```
-Enter the virtual environment with `. venv/bin/activate` while inside `/bonito`, and then the `bonito` command will be available as in their documentation.
+Enter the virtual environment with `. venv/bin/activate` while inside `/bonito`, and then the `bonito` command will be available as in their documentation. 
